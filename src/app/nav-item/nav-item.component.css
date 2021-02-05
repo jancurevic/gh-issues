@@ -1,0 +1,25 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    padding: 17px 15px;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgba(0, 47, 255, 0.219);
+}
+
+.item--highlight {
+    background-color: rgb(41, 41, 112);
+}
+
+.item__container {
+    display: flex;
+    align-items: center;
+}
+
+.item__icon {
+    margin-right: 9px;
+}

@@ -1,0 +1,7 @@
+<div class="item" [ngClass]="{'item--highlight': item.isSelected}">
+    <div class="item__container">
+        <img class="item__icon" [src]="item.icon">
+        <span class="item__label">{{item.label}}</span>
+    </div>
+    <div>{{item.count}}</div>
+</div>

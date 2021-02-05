@@ -1,0 +1,19 @@
+.button {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.button--red {
+    background-color: #ff5c5c;
+}
+
+.button--yellow {
+    background-color: #ffbd4c;
+}
+
+.button--green {
+    background-color: #029740;
+}

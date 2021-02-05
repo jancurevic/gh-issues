@@ -1,0 +1,7 @@
+<div class="nav">
+  <app-nav-item
+    *ngFor="let item of navItems; let i = index"
+    [item]="item"
+    (click)="selectTab(i)"
+  ></app-nav-item>
+</div>

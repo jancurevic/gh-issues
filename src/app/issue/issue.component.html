@@ -1,0 +1,4 @@
+<div class="issue">
+    <span class="issue__label">{{issue.label}}</span>
+    <app-star (click)=changeFavourite() [favourite]="issue.isFavourite"></app-star>
+</div>

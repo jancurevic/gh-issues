@@ -1,0 +1,10 @@
+<div class="issues">
+  <span *ngIf="loading">Loading...</span>
+  <div *ngIf="!loading">
+    <issue-group
+      *ngFor="let group of issueGroup"
+      [date]="group[0].date"
+      [group]="group"
+    ></issue-group>
+  </div>
+</div>

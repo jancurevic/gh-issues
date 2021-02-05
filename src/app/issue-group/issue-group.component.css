@@ -1,0 +1,13 @@
+.group{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.group__date {
+    font-size: 9px;
+    color: #3f3f3f;
+}
+
+.group__issues{
+    margin-top: 10px;
+}

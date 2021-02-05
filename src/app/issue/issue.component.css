@@ -1,0 +1,18 @@
+.issue {
+    height: 38px;
+    width: 100%;
+    background-color: #ebebeb;
+    border: 1px solid #818181;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding: 0 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.issue__star {
+    box-sizing: border-box;
+}
