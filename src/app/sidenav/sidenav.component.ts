@@ -16,25 +16,40 @@ export interface NavItem {
 export class SidenavComponent implements OnInit {
   navItems!: NavItem[];
 
-  constructor(private issue:IssueService) {}
+  constructor(private issue: IssueService) {}
 
   ngOnInit(): void {
-    this.navItems = [
+    this.issue.getAll().subscribe(
+      (issues) => {
+        this.navItems = this.assignNavItems(
+          issues.length,
+          issues.filter((issue) => issue.isOpen).length,
+          issues.filter((issue) => !issue.isOpen).length
+        );
+      },
+      () => {
+        this.navItems = this.assignNavItems();
+      }
+    );
+  }
+
+  assignNavItems(all: number = 0, open: number = 0, closed: number = 0) {
+    return [
       {
         label: 'All',
-        count: this.issue.getAll().length,
+        count: all,
         icon: '../../assets/icon-github.svg',
         isSelected: true,
       },
       {
         label: 'Open',
-        count: this.issue.getAllOpen().length,
+        count: open,
         icon: '../../assets/icon-open-issue.svg',
         isSelected: false,
       },
       {
         label: 'Closed',
-        count: this.issue.getAllClosed().length,
+        count: closed,
         icon: '../../assets/icon-closed-issue.svg',
         isSelected: false,
       },
@@ -42,7 +57,7 @@ export class SidenavComponent implements OnInit {
   }
 
   selectTab(index: number) {
-    this.navItems.forEach(item => item.isSelected = false);
+    this.navItems.forEach((item) => (item.isSelected = false));
     this.navItems[index].isSelected = true;
   }
 }

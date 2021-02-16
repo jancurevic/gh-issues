@@ -12,6 +12,7 @@ import { NavItemComponent } from './nav-item/nav-item.component';
 import { IssueGroupComponent } from './issue-group/issue-group.component';
 import { IssueComponent } from './issue/issue.component';
 import { StarComponent } from './star/star.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { StarComponent } from './star/star.component';
     IssueComponent,
     StarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

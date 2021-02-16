@@ -16,9 +16,8 @@ export class IssueListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
-    setTimeout(() => {
-      this.issues = this.issue.getAll();
-
+    this.issue.getAll().subscribe(issues => {
+      this.issues = issues;
       this.issues.forEach((issue) => {
         if (this.issueObj[issue.date]) {
           this.issueObj[issue.date].push(issue);
@@ -26,11 +25,11 @@ export class IssueListComponent implements OnInit {
           this.issueObj[issue.date] = [issue];
         }
       });
-
-      for(let key in this.issueObj) {
+  
+      for (let key in this.issueObj) {
         this.issueGroup.push(this.issueObj[key]);
       }
       this.loading = false;
-    }, 1500);
+    })
   }
 }
